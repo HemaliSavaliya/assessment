@@ -3,6 +3,7 @@ import "./App.css";
 import { GetSpreadSheetData } from "./component/data";
 import PivotTable from "./component/PivotTable";
 import TableView from "./component/TableView";
+import "react-pivottable/pivottable.css";
 
 function App() {
   const { data, isLoading } = GetSpreadSheetData();

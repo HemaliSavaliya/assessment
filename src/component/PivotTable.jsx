@@ -1,11 +1,10 @@
-// PivotTable.js
 import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import PivotTableUI from "react-pivottable/PivotTableUI";
 import TableRenderers from "react-pivottable/TableRenderers";
 import createPlotlyComponent from "react-plotly.js/factory";
 import createPlotlyRenderers from "react-pivottable/PlotlyRenderers";
-import Plotly from "react-plotlyjs"; // Use the minified Plotly version
+import Plotly from "plotly.js-basic-dist"; // Make sure this matches your installed package
 
 // Create Plotly React component via dependency injection
 const Plot = createPlotlyComponent(Plotly);
@@ -59,7 +58,12 @@ const PivotTable = ({ data }) => {
   };
 
   return (
-    <Box sx={{ padding: "30px", margin: "0 30px", boxSizing: "border-box" }}>
+    <Box
+      sx={{
+        margin: "30px",
+        boxSizing: "border-box",
+      }}
+    >
       <button onClick={handleReset}>Reset</button>
       <PivotTableUI
         data={data}
